@@ -115,7 +115,7 @@ static inline void memset_32(uint32_t* out, size_t num32, uint32_t val32)
 	assert((size_t(out) % 4) == 0); // must be 4-byte aligned
 
 #if ASM_X86
-#if defined _MSC_VER
+#if defined _MSC_VER && !defined(_M_ARM64)
 	// VC++'s __stosd intrinsic results in emulator benchmarks
 	// running about 7% faster than with memset_32_2, streaming or not,
 	// and about 3% faster than the C code below.
