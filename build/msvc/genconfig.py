@@ -10,7 +10,7 @@ import win_resource
 import version2code
 
 #
-# platform: one of { Win32, x64 }
+# platform: one of { Win32, x64, ARM64 }
 # configuration: one of { Debug, Developer, Release }
 # outputPath: the location in which to generate config files
 #
@@ -29,6 +29,8 @@ def genConfig(platform, configuration, outputPath):
 		targetCPU = 'x86'
 	elif platform == 'x64':
 		targetCPU = 'x86_64'
+	elif platform == 'ARM64':
+		targetCPU = 'aarch64'
 	else:
 		raise ValueError('Invalid platform: ' + platform)
 	flavour = configuration

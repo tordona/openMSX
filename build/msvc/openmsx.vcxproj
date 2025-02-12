@@ -1,6 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|ARM64">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
       <Platform>Win32</Platform>
@@ -9,6 +13,10 @@
       <Configuration>Debug</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
+    <ProjectConfiguration Include="Developer|ARM64">
+      <Configuration>Developer</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
     <ProjectConfiguration Include="Developer|Win32">
       <Configuration>Developer</Configuration>
       <Platform>Win32</Platform>
@@ -16,6 +24,10 @@
     <ProjectConfiguration Include="Developer|x64">
       <Configuration>Developer</Configuration>
       <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM64">
+      <Configuration>Release</Configuration>
+      <Platform>ARM64</Platform>
     </ProjectConfiguration>
     <ProjectConfiguration Include="Release|Win32">
       <Configuration>Release</Configuration>
@@ -33,9 +45,6 @@
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
-  <PropertyGroup>
-    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
-  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Developer|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>Unicode</CharacterSet>
@@ -57,13 +66,29 @@
     <CharacterSet>Unicode</CharacterSet>
     <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Developer|ARM64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>Unicode</CharacterSet>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>Unicode</CharacterSet>
     <PlatformToolset>v143</PlatformToolset>
@@ -87,11 +112,23 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="..\3rdparty\3rdparty.props" />
   </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Developer|ARM64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\3rdparty\3rdparty.props" />
+  </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="..\3rdparty\3rdparty.props" />
   </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\3rdparty\3rdparty.props" />
+  </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\3rdparty\3rdparty.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="..\3rdparty\3rdparty.props" />
   </ImportGroup>
@@ -102,14 +139,20 @@
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OpenMSXIntDir)\</IntDir>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OpenMSXOutDir)\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OpenMSXIntDir)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">$(OpenMSXOutDir)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">$(OpenMSXIntDir)\</IntDir>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OpenMSXOutDir)\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OpenMSXIntDir)\</IntDir>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OpenMSXOutDir)\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OpenMSXIntDir)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">$(OpenMSXOutDir)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">$(OpenMSXIntDir)\</IntDir>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Developer|Win32'">$(OpenMSXOutDir)\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Developer|Win32'">$(OpenMSXIntDir)\</IntDir>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Developer|x64'">$(OpenMSXOutDir)\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Developer|x64'">$(OpenMSXIntDir)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Developer|ARM64'">$(OpenMSXOutDir)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Developer|ARM64'">$(OpenMSXIntDir)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -168,6 +211,32 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <TargetMachine>MachineX64</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+    <Midl />
+    <ClCompile>
+      <AdditionalOptions>/utf-8 /constexpr:steps20000000 /MP %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <CppLanguageStandard>c++20</CppLanguageStandard>
+      <AdditionalIncludeDirectories>$(OpenMSXConfigDir);$(DXSDK_DIR)\Include;$(ThirdPartySrcDir)\$(LibNameFreeType)\include;$(ThirdPartySrcDir)\$(LibNameGlew)\include;$(ThirdPartySrcDir)\$(LibNameLibPng);$(ThirdPartySrcDir)\$(LibNameSDL)\include;$(ThirdPartySrcDir)\$(LibNameSDL_ttf);$(ThirdPartySrcDir)\$(LibNameTheora)\include;$(ThirdPartySrcDir)\$(LibNameVorbis)\include;$(ThirdPartySrcDir)\$(LibNameOgg)\include;$(ThirdPartySrcDir)\$(LibNameTcl)\generic;$(ThirdPartySrcDir)\$(LibNameZlib);$(OpenMSXSrcDir);$(OpenMSXSrcDir)\3rdparty\ImGuiFileDialog;$(OpenMSXSrcDir)\3rdparty\imgui;$(OpenMSXSrcDir)\3rdparty\imgui_memory_editor;$(OpenMSXSrcDir)\cassette;$(OpenMSXSrcDir)\commands;$(OpenMSXSrcDir)\config;$(OpenMSXSrcDir)\console;$(OpenMSXSrcDir)\cpu;$(OpenMSXSrcDir)\debugger;$(OpenMSXSrcDir)\events;$(OpenMSXSrcDir)\fdc;$(OpenMSXSrcDir)\file;$(OpenMSXSrcDir)\ide;$(OpenMSXSrcDir)\imgui;$(OpenMSXSrcDir)\input;$(OpenMSXSrcDir)\laserdisc;$(OpenMSXSrcDir)\memory;$(OpenMSXSrcDir)\resource;$(OpenMSXSrcDir)\security;$(OpenMSXSrcDir)\serial;$(OpenMSXSrcDir)\settings;$(OpenMSXSrcDir)\sound;$(OpenMSXSrcDir)\thread;$(OpenMSXSrcDir)\utils;$(OpenMSXSrcDir)\video;$(OpenMSXSrcDir)\video\scalers;$(OpenMSXSrcDir)\video\ld;$(OpenMSXSrcDir)\video\v9990;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>__SSE__;__SSE2__;_M_ARM64;USE_SOFT_INTRINSICS;UNICODE;_UNICODE;ARM64_LEAN_AND_MEAN;SECURITY_WIN32;DEBUG;_DEBUG;_CONSOLE;_USE_MATH_DEFINES;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;NOMINMAX;GLEW_STATIC;STATIC_BUILD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <WarningLevel>Level4</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4324;4063;4121;4125;4127;4189;4201;4244;4310;4355;4505;4512;4611;4702;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>$(OpenMSXConfigDir);$(ThirdPartySrcDir)\$(LibNameTcl)\generic;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>wsock32.lib;setupapi.lib;netapi32.lib;winmm.lib;imm32.lib;version.lib;secur32.lib;opengl32.lib;dxguid.lib;dsound.lib;SDL.lib;SDLmain.lib;SDL_ttf.lib;freetype.lib;glew.lib;libogg.lib;libpng.lib;libtheora.lib;libvorbis.lib;tcl.lib;zlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)openmsx.exe</OutputFile>
+      <AdditionalLibraryDirectories>$(DXSDK_DIR)\Lib\$(Platform);$(ThirdPartyOutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <DelayLoadDLLs>shell32.dll;%(DelayLoadDLLs)</DelayLoadDLLs>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -250,6 +319,43 @@
       <TargetMachine>MachineX64</TargetMachine>
     </Link>
   </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+    <Midl />
+    <ClCompile>
+      <AdditionalOptions>/utf-8 /constexpr:steps20000000 /MP %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Full</Optimization>
+      <CppLanguageStandard>c++20</CppLanguageStandard>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
+      <AdditionalIncludeDirectories>$(OpenMSXConfigDir);$(DXSDK_DIR)\Include;$(ThirdPartySrcDir)\$(LibNameFreeType)\include;$(ThirdPartySrcDir)\$(LibNameGlew)\include;$(ThirdPartySrcDir)\$(LibNameLibPng);$(ThirdPartySrcDir)\$(LibNameSDL)\include;$(ThirdPartySrcDir)\$(LibNameSDL_ttf);$(ThirdPartySrcDir)\$(LibNameTheora)\include;$(ThirdPartySrcDir)\$(LibNameVorbis)\include;$(ThirdPartySrcDir)\$(LibNameOgg)\include;$(ThirdPartySrcDir)\$(LibNameTcl)\generic;$(ThirdPartySrcDir)\$(LibNameZlib);$(OpenMSXSrcDir);$(OpenMSXSrcDir)\3rdparty\ImGuiFileDialog;$(OpenMSXSrcDir)\3rdparty\imgui;$(OpenMSXSrcDir)\3rdparty\imgui_memory_editor;$(OpenMSXSrcDir)\cassette;$(OpenMSXSrcDir)\commands;$(OpenMSXSrcDir)\config;$(OpenMSXSrcDir)\console;$(OpenMSXSrcDir)\cpu;$(OpenMSXSrcDir)\debugger;$(OpenMSXSrcDir)\events;$(OpenMSXSrcDir)\fdc;$(OpenMSXSrcDir)\file;$(OpenMSXSrcDir)\ide;$(OpenMSXSrcDir)\imgui;$(OpenMSXSrcDir)\input;$(OpenMSXSrcDir)\laserdisc;$(OpenMSXSrcDir)\memory;$(OpenMSXSrcDir)\resource;$(OpenMSXSrcDir)\security;$(OpenMSXSrcDir)\serial;$(OpenMSXSrcDir)\settings;$(OpenMSXSrcDir)\sound;$(OpenMSXSrcDir)\thread;$(OpenMSXSrcDir)\utils;$(OpenMSXSrcDir)\video;$(OpenMSXSrcDir)\video\scalers;$(OpenMSXSrcDir)\video\ld;$(OpenMSXSrcDir)\video\v9990;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_M_ARM64;USE_SOFT_INTRINSICS;ARM64_LEAN_AND_MEAN;UNICODE;_UNICODE;SECURITY_WIN32;NDEBUG;_CONSOLE;_USE_MATH_DEFINES;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;NOMINMAX;GLEW_STATIC;STATIC_BUILD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4324;4063;4121;4125;4127;4189;4201;4244;4310;4355;4505;4512;4611;4702;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>$(OpenMSXConfigDir);$(ThirdPartySrcDir)\$(LibNameTcl)\generic;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>wsock32.lib;setupapi.lib;netapi32.lib;winmm.lib;imm32.lib;version.lib;secur32.lib;opengl32.lib;dxguid.lib;dsound.lib;SDL.lib;SDLmain.lib;SDL_ttf.lib;freetype.lib;glew.lib;libogg.lib;libpng.lib;libtheora.lib;libvorbis.lib;tcl.lib;zlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)openmsx.exe</OutputFile>
+      <AdditionalLibraryDirectories>$(DXSDK_DIR)\Lib\$(Platform);$(ThirdPartyOutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <DelayLoadDLLs>shell32.dll;%(DelayLoadDLLs)</DelayLoadDLLs>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+    </Link>
+  </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Developer|Win32'">
     <ClCompile>
       <AdditionalOptions>/utf-8 /constexpr:steps20000000 /MP %(AdditionalOptions)</AdditionalOptions>
@@ -309,6 +415,33 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <TargetMachine>MachineX64</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Developer|ARM64'">
+    <Midl />
+    <ClCompile>
+      <AdditionalOptions>/utf-8 /constexpr:steps20000000 /MP %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <CppLanguageStandard>c++20</CppLanguageStandard>
+      <AdditionalIncludeDirectories>$(OpenMSXConfigDir);$(DXSDK_DIR)\Include;$(ThirdPartySrcDir)\$(LibNameFreeType)\include;$(ThirdPartySrcDir)\$(LibNameGlew)\include;$(ThirdPartySrcDir)\$(LibNameLibPng);$(ThirdPartySrcDir)\$(LibNameSDL)\include;$(ThirdPartySrcDir)\$(LibNameSDL_ttf);$(ThirdPartySrcDir)\$(LibNameTheora)\include;$(ThirdPartySrcDir)\$(LibNameVorbis)\include;$(ThirdPartySrcDir)\$(LibNameOgg)\include;$(ThirdPartySrcDir)\$(LibNameTcl)\generic;$(ThirdPartySrcDir)\$(LibNameZlib);$(OpenMSXSrcDir);$(OpenMSXSrcDir)\3rdparty\ImGuiFileDialog;$(OpenMSXSrcDir)\3rdparty\imgui;$(OpenMSXSrcDir)\3rdparty\imgui_memory_editor;$(OpenMSXSrcDir)\cassette;$(OpenMSXSrcDir)\commands;$(OpenMSXSrcDir)\config;$(OpenMSXSrcDir)\console;$(OpenMSXSrcDir)\cpu;$(OpenMSXSrcDir)\debugger;$(OpenMSXSrcDir)\events;$(OpenMSXSrcDir)\fdc;$(OpenMSXSrcDir)\file;$(OpenMSXSrcDir)\ide;$(OpenMSXSrcDir)\imgui;$(OpenMSXSrcDir)\input;$(OpenMSXSrcDir)\laserdisc;$(OpenMSXSrcDir)\memory;$(OpenMSXSrcDir)\resource;$(OpenMSXSrcDir)\security;$(OpenMSXSrcDir)\serial;$(OpenMSXSrcDir)\settings;$(OpenMSXSrcDir)\sound;$(OpenMSXSrcDir)\thread;$(OpenMSXSrcDir)\utils;$(OpenMSXSrcDir)\video;$(OpenMSXSrcDir)\video\scalers;$(OpenMSXSrcDir)\video\ld;$(OpenMSXSrcDir)\video\v9990;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>__SSE__;__SSE2__;WIN32;_WIN64;__x86_64;UNICODE;_UNICODE;WIN32_LEAN_AND_MEAN;SECURITY_WIN32;_DEBUG;_CONSOLE;_USE_MATH_DEFINES;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;NOMINMAX;GLEW_STATIC;STATIC_BUILD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <WarningLevel>Level4</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4324;4063;4121;4125;4127;4189;4201;4244;4310;4355;4505;4512;4611;4702;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>$(OpenMSXConfigDir);$(ThirdPartySrcDir)\$(LibNameTcl)\generic;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>wsock32.lib;setupapi.lib;netapi32.lib;winmm.lib;imm32.lib;version.lib;secur32.lib;opengl32.lib;dxguid.lib;dsound.lib;SDL.lib;SDLmain.lib;SDL_ttf.lib;freetype.lib;glew.lib;libogg.lib;libpng.lib;libtheora.lib;libvorbis.lib;tcl.lib;zlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)openmsx.exe</OutputFile>
+      <AdditionalLibraryDirectories>$(DXSDK_DIR)\Lib\$(Platform);$(ThirdPartyOutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <DelayLoadDLLs>shell32.dll;%(DelayLoadDLLs)</DelayLoadDLLs>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -1523,6 +1656,7 @@ python3 "%MSVC_DIR%\genconfig.py" $(Platform) "$(Configuration)" "%CONFIG_DIR%"
 popd</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">build-info.hh;components.hh;probed_defs.hh;resource-info.h;Version.ii;%(Outputs)</Outputs>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Generating config headers...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">Generating config headers...</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">for /f "delims=" %%d in ("$(OpenMSXConfigDir)") do set CONFIG_DIR=%%~fd
 rem echo CONFIG_DIR=%CONFIG_DIR%
 for /f "delims=" %%d in ("$(OpenMSXRootDir)") do set ROOT_DIR=%%~fd
@@ -1536,7 +1670,21 @@ rem echo PYTHONPATH=%PYTHONPATH%
 pushd %ROOT_DIR%
 python3 "%MSVC_DIR%\genconfig.py" $(Platform) "$(Configuration)" "%CONFIG_DIR%"
 popd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">for /f "delims=" %%d in ("$(OpenMSXConfigDir)") do set CONFIG_DIR=%%~fd
+rem echo CONFIG_DIR=%CONFIG_DIR%
+for /f "delims=" %%d in ("$(OpenMSXRootDir)") do set ROOT_DIR=%%~fd
+rem echo ROOT_DIR=%ROOT_DIR%
+set BUILD_DIR=%ROOT_DIR%\build
+rem echo BUILD_DIR=%BUILD_DIR%
+set MSVC_DIR=%BUILD_DIR%\msvc
+rem echo MSVC_DIR=%MSVC_DIR%
+set PYTHONPATH=%PYTHONPATH%;%BUILD_DIR%
+rem echo PYTHONPATH=%PYTHONPATH%
+pushd %ROOT_DIR%
+python3 "%MSVC_DIR%\genconfig.py" $(Platform) "$(Configuration)" "%CONFIG_DIR%"
+popd</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">build-info.hh;components.hh;probed_defs.hh;resource-info.h;Version.ii;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">build-info.hh;components.hh;probed_defs.hh;resource-info.h;Version.ii;%(Outputs)</Outputs>
       <Message Condition="'$(Configuration)|$(Platform)'=='Developer|Win32'">Generating config headers...</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Developer|Win32'">for /f "delims=" %%d in ("$(OpenMSXConfigDir)") do set CONFIG_DIR=%%~fd
 rem echo CONFIG_DIR=%CONFIG_DIR%
@@ -1553,6 +1701,7 @@ python3 "%MSVC_DIR%\genconfig.py" $(Platform) "$(Configuration)" "%CONFIG_DIR%"
 popd</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Developer|Win32'">build-info.hh;components.hh;probed_defs.hh;resource-info.h;Version.ii;%(Outputs)</Outputs>
       <Message Condition="'$(Configuration)|$(Platform)'=='Developer|x64'">Generating config headers...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Developer|ARM64'">Generating config headers...</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Developer|x64'">for /f "delims=" %%d in ("$(OpenMSXConfigDir)") do set CONFIG_DIR=%%~fd
 rem echo CONFIG_DIR=%CONFIG_DIR%
 for /f "delims=" %%d in ("$(OpenMSXRootDir)") do set ROOT_DIR=%%~fd
@@ -1566,7 +1715,21 @@ rem echo PYTHONPATH=%PYTHONPATH%
 pushd %ROOT_DIR%
 python3 "%MSVC_DIR%\genconfig.py" $(Platform) "$(Configuration)" "%CONFIG_DIR%"
 popd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Developer|ARM64'">for /f "delims=" %%d in ("$(OpenMSXConfigDir)") do set CONFIG_DIR=%%~fd
+rem echo CONFIG_DIR=%CONFIG_DIR%
+for /f "delims=" %%d in ("$(OpenMSXRootDir)") do set ROOT_DIR=%%~fd
+rem echo ROOT_DIR=%ROOT_DIR%
+set BUILD_DIR=%ROOT_DIR%\build
+rem echo BUILD_DIR=%BUILD_DIR%
+set MSVC_DIR=%BUILD_DIR%\msvc
+rem echo MSVC_DIR=%MSVC_DIR%
+set PYTHONPATH=%PYTHONPATH%;%BUILD_DIR%
+rem echo PYTHONPATH=%PYTHONPATH%
+pushd %ROOT_DIR%
+python3 "%MSVC_DIR%\genconfig.py" $(Platform) "$(Configuration)" "%CONFIG_DIR%"
+popd</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Developer|x64'">build-info.hh;components.hh;probed_defs.hh;resource-info.h;Version.ii;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Developer|ARM64'">build-info.hh;components.hh;probed_defs.hh;resource-info.h;Version.ii;%(Outputs)</Outputs>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Generating config headers...</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">for /f "delims=" %%d in ("$(OpenMSXConfigDir)") do set CONFIG_DIR=%%~fd
 rem echo CONFIG_DIR=%CONFIG_DIR%
@@ -1583,6 +1746,7 @@ python3 "%MSVC_DIR%\genconfig.py" $(Platform) "$(Configuration)" "%CONFIG_DIR%"
 popd</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">build-info.hh;components.hh;probed_defs.hh;resource-info.h;Version.ii;%(Outputs)</Outputs>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Generating config headers...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">Generating config headers...</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">for /f "delims=" %%d in ("$(OpenMSXConfigDir)") do set CONFIG_DIR=%%~fd
 rem echo CONFIG_DIR=%CONFIG_DIR%
 for /f "delims=" %%d in ("$(OpenMSXRootDir)") do set ROOT_DIR=%%~fd
@@ -1596,7 +1760,21 @@ rem echo PYTHONPATH=%PYTHONPATH%
 pushd %ROOT_DIR%
 python3 "%MSVC_DIR%\genconfig.py" $(Platform) "$(Configuration)" "%CONFIG_DIR%"
 popd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">for /f "delims=" %%d in ("$(OpenMSXConfigDir)") do set CONFIG_DIR=%%~fd
+rem echo CONFIG_DIR=%CONFIG_DIR%
+for /f "delims=" %%d in ("$(OpenMSXRootDir)") do set ROOT_DIR=%%~fd
+rem echo ROOT_DIR=%ROOT_DIR%
+set BUILD_DIR=%ROOT_DIR%\build
+rem echo BUILD_DIR=%BUILD_DIR%
+set MSVC_DIR=%BUILD_DIR%\msvc
+rem echo MSVC_DIR=%MSVC_DIR%
+set PYTHONPATH=%PYTHONPATH%;%BUILD_DIR%
+rem echo PYTHONPATH=%PYTHONPATH%
+pushd %ROOT_DIR%
+python3 "%MSVC_DIR%\genconfig.py" $(Platform) "$(Configuration)" "%CONFIG_DIR%"
+popd</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">build-info.hh;components.hh;probed_defs.hh;resource-info.h;Version.ii;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">build-info.hh;components.hh;probed_defs.hh;resource-info.h;Version.ii;%(Outputs)</Outputs>
     </CustomBuild>
     <None Include="$(OpenMSXSrcDir)\PasswordCart.hh" />
     <None Include="$(OpenMSXSrcDir)\PatchInterface.hh" />
